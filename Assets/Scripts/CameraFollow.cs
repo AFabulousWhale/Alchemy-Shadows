@@ -13,9 +13,9 @@ public class CameraFollow : MonoBehaviour
 
     private float cur_zoom = 5f;
 
-    private void UpdateZoom(float new_zoom)
+    private float UpdateZoom(float new_zoom)
     {
-        cur_zoom = Mathf.Clamp(cur_zoom, min_zoom, max_zoom);
+        return Mathf.Clamp(new_zoom, min_zoom, max_zoom);
     }
     // Update is called once per frame
     void Update()
@@ -27,8 +27,9 @@ public class CameraFollow : MonoBehaviour
         // zoom code.
         {
             float scroll_input = Input.mouseScrollDelta.y * 10;
-            if      (scroll_input > 0) UpdateZoom(cur_zoom + ( 1 * .55f) );
-            else if (scroll_input < 0) UpdateZoom(cur_zoom + (-1 * .55f) );
+            Debug.Log("Scroll input: " + scroll_input);
+            if      (scroll_input > 0) cur_zoom = UpdateZoom(cur_zoom + ( 1 * .55f) );
+            else if (scroll_input < 0) cur_zoom = UpdateZoom(cur_zoom + (-1 * .55f) );
 
             camera.orthographicSize = cur_zoom;
         }
