@@ -569,8 +569,8 @@ MonoBehaviour:
   follow_speed: 2
   target: {fileID: 1181491162}
   camera: {fileID: 1208794599}
-  min_zoom: 2
-  max_zoom: 8
+  min_zoom: 5
+  max_zoom: 12
 --- !u!1 &1309857790
 GameObject:
   m_ObjectHideFlags: 0

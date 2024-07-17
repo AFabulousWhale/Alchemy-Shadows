@@ -8,8 +8,8 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public Camera camera;
 
-    [SerializeField] private float min_zoom = 2f;
-    [SerializeField] private float max_zoom = 8f;
+    [SerializeField] private float min_zoom = 5f;
+    [SerializeField] private float max_zoom = 12f;
 
     private float cur_zoom = 5f;
 
@@ -28,8 +28,8 @@ public class CameraFollow : MonoBehaviour
         {
             float scroll_input = Input.mouseScrollDelta.y * 10;
             Debug.Log("Scroll input: " + scroll_input);
-            if      (scroll_input > 0) cur_zoom = UpdateZoom(cur_zoom + ( 1 * .55f) );
-            else if (scroll_input < 0) cur_zoom = UpdateZoom(cur_zoom + (-1 * .55f) );
+            if      (scroll_input > 0) cur_zoom = UpdateZoom(cur_zoom + (-1 * .55f) );
+            else if (scroll_input < 0) cur_zoom = UpdateZoom(cur_zoom + ( 1 * .55f) );
 
             camera.orthographicSize = cur_zoom;
         }
