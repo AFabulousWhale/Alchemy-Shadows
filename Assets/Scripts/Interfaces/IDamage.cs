@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IDamage : MonoBehaviour
+public class IDamage: MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Damage(float amountToDamage, GameObject attacker, GameObject objectHit)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(objectHit != attacker) //if not hit self
+        {
+            Entity entity = objectHit.GetComponent<Entity>();
+            
+            if(entity) //if object has health
+            {
+                entity.Damage(amountToDamage);
+            }
+        }
     }
 }
