@@ -8,6 +8,8 @@ public class Player: Entity
     [SerializeField]
     TextMeshProUGUI healthUI;
 
+    public bool isDead;
+
     void Start()
     {
         maxHealth = 100;
@@ -25,6 +27,14 @@ public class Player: Entity
     public override float Damage(float damageAmount)
     {
         healthUI.text = ($"Health: {base.Damage(damageAmount)}");
+
+        isDead = HealthCheck();
+
         return health;
+    }
+
+    public override void Die()
+    {
+        //player death stuff
     }
 }

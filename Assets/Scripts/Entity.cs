@@ -15,16 +15,23 @@ public class Entity : MonoBehaviour
 
         Debug.Log(health);
 
-        if(health <= 0)
+        return health;
+    }
+
+    public bool HealthCheck()
+    {
+        if (health <= 0)
         {
             Die();
+            return true;
         }
-
-        return health;
+        else
+        {
+            return false;
+        }
     }
 
     public virtual void Die()
     {
-
     }
 }
