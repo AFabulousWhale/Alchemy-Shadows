@@ -6,7 +6,6 @@ public class Enemy : Entity
 {
     void Start()
     {
-        maxHealth = 100;
         health = maxHealth;
     }
 
