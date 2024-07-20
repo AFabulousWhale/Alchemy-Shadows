@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6847212268615475907, guid: 695047a7dbd2a734eb95ddbdec012c16, type: 3}
   maxHealth: 150
+  weapon: {fileID: 11400000, guid: 9bbb91785a58bdb4988cca240180f887, type: 2}

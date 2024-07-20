@@ -7,6 +7,7 @@ public class EnemySO : ScriptableObject
 {
     public GameObject enemyPrefab;
     public float maxHealth;
+    public WeaponSO weapon;
 
     //can add enums for different attacks etc - once these are more polished and decided
 }

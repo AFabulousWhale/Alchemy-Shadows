@@ -5,9 +5,12 @@ using UnityEngine;
 public class BulletTest : IDamage
 {
     public GameObject parent;
+    public float damageMin;
+    public float damageMax;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damage(50, this.gameObject, collision.gameObject);
+        float damage = Random.Range(damageMin, damageMax);
+        Damage(damage, parent, collision.gameObject);
     }
 }
