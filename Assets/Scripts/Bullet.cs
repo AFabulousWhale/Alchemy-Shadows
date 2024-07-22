@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletTest : IDamage
+public class Bullet : IDamage
 {
     public GameObject parent;
     public float damageMin;

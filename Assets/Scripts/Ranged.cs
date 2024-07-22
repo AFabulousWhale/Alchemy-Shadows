@@ -8,11 +8,11 @@ public class Ranged : Weapon
 
     private void Start()
     {
-        BulletTest bulletScript = bulletPrefab.GetComponent<BulletTest>();
+        Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
 
         if(!bulletScript)
         {
-            bulletPrefab.AddComponent<BulletTest>();
+            bulletPrefab.AddComponent<Bullet>();
         }
 
         bulletScript.parent = transform.parent.gameObject;
