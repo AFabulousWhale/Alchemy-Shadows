@@ -16,14 +16,6 @@ public class Player: Entity
         health = maxHealth;
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            Damage(5);
-        }
-    }
-
     public override float Damage(float damageAmount)
     {
         healthUI.text = ($"Health: {base.Damage(damageAmount)}");

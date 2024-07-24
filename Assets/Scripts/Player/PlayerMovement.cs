@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform   ground_check;
     [SerializeField] private LayerMask   ground_layer;
 
+    Animator animator;
+
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(ground_check.position, 0.2f, ground_layer);
@@ -21,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("X", horizontal);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
