@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Warlock
   m_EditorClassIdentifier: 
   characterName: Warlock
-  characterPicture: {fileID: -1825931381, guid: 1201c14bb4ee74d8e99e56dc4f3f4fd1, type: 3}
+  characterPicture: {fileID: 21300000, guid: 5cb042ae7e1009b4b80e0b7c15c40152, type: 3}
+  talkSpeed: 0.034
+  talkingSFX: {fileID: 11400000, guid: 8e94dd3bd64750a4fae45951857e93cd, type: 2}

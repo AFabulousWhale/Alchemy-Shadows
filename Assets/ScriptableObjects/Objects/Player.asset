@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   characterName: Player
-  characterPicture: {fileID: 21300000, guid: 81e91049c92c5764e8db8069dc6c8987, type: 3}
+  characterPicture: {fileID: 21300000, guid: f2da47e7fac99d847a5fbc81d42b27fa, type: 3}
+  talkSpeed: 0.05
+  talkingSFX: {fileID: 11400000, guid: bcaaa2af948fa5d4d9d347fcfaea0e00, type: 2}

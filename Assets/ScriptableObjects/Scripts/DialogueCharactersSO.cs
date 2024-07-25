@@ -8,5 +8,9 @@ public class DialogueCharactersSO : ScriptableObject
     public string characterName;
     public Sprite characterPicture;
 
+    public float talkSpeed;
+
+    public AudioSO talkingSFX;
+
     //another scriptable objects for their voice
 }
