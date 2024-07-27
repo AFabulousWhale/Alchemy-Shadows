@@ -12,6 +12,10 @@ public class GrowAnim : MonoBehaviour
 
     [SerializeField]
     Vector3 finalScale;
+
+    [SerializeField]
+    Vector3 startScale;
+
     public void AppearAnim()
     {
         LeanTween.scale(gameObject, finalScale, duration).setEase(easeType);
@@ -19,6 +23,6 @@ public class GrowAnim : MonoBehaviour
 
     public void DisAppearAnim()
     {
-        LeanTween.scale(gameObject, new Vector3(1, 1, 1), duration).setEase(easeType);
+        LeanTween.scale(gameObject, startScale, duration).setEase(easeType);
     }
 }

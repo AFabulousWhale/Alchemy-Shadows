@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!243 &-9039100889354880441
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Speech
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: ccbc011d0bcd43a43b20171ea486b5a2
+  m_Children: []
+  m_Volume: 66767d5a64752894198b88f00f6b3fec
+  m_Pitch: 24fc62be574e9e5479bf734e78d11340
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -3570358108777498129}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-3570358108777498129
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 49b93c192161d37468f4ea4942810144
+  m_EffectName: Attenuation
+  m_MixLevel: f5c6f31bbf5acd34d98ca24f86c89205
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-2297744513083860230
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -48,12 +81,21 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 9dde169cfe27db649a45b86cc20f434a
+    name: MasterVol
+  - guid: 6d6392a1c72d35b4c9b9d93260585a38
+    name: MusicVol
+  - guid: 71c07da009a1b72438b774e5ff600fb1
+    name: SFXVol
+  - guid: 66767d5a64752894198b88f00f6b3fec
+    name: SpeechVol
   m_AudioMixerGroupViews:
   - guids:
     - 6cc77b1d5e2c5bf468b326cef6762453
     - eb7e6c14158473a46962a4dcea83748a
     - 75f87f8383d1173408b5c9d9cd4faa85
+    - ccbc011d0bcd43a43b20171ea486b5a2
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -69,6 +111,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -1059093895216313589}
   - {fileID: 7062222832904931593}
+  - {fileID: -9039100889354880441}
   m_Volume: 9dde169cfe27db649a45b86cc20f434a
   m_Pitch: 245de09baa640504594152ebddbc4fee
   m_Send: 00000000000000000000000000000000
