@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: a541a5fed8cc76446bd8a802b47d0bd3
+  - enabled: 1
+    path: Assets/Scenes/DialogueTest.unity
+    guid: ca247ce51b1d523438a5406add7f0be0
+  - enabled: 1
+    path: Assets/Scenes/Gloomy woods.unity
+    guid: 5119706e05ecaaa43931c3a0c3307c08
+  - enabled: 1
+    path: Assets/Scenes/Hamshanks arena.unity
+    guid: 4f45de54b3b27de47a39ac8bec053ff6
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 1016c0afe0b89084abbab106cf0449b6
+  - enabled: 1
+    path: Assets/Scenes/Warlocks abode.unity
+    guid: b8348786fcab32949b092e402528616e
   m_configObjects: {}
