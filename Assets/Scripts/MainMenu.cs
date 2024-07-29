@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject optionsMenu;
     public void Play()
-    {
-
-    }
-
-    public void Options()
     {
 
     }
