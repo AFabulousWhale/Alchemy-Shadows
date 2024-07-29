@@ -61,6 +61,8 @@ public class DialogueSystem : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space)) //skips to the next line of dialogue
                 {
+                    StopAllCoroutines();
+                    audioSource.Stop();
                     //Normal Speech
                     int nextDialogue = currentStageOfDialogue + 1;
                     if (!currentDialogue.text[nextDialogue].isBranch) //if not a branch then go to the next piece of dialogue
@@ -92,6 +94,7 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             StopAllCoroutines();
+            audioSource.Stop();
         }
     }
 
@@ -116,6 +119,7 @@ public class DialogueSystem : MonoBehaviour
     public void ProgressDialogue()
     {
         StopAllCoroutines();
+        audioSource.Stop();
 
         currentStageOfDialogue++;
         dialogueDisplay = currentDialogue.text[currentStageOfDialogue].speech;

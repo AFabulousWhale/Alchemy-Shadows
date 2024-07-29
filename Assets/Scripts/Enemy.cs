@@ -8,12 +8,4 @@ public class Enemy : Entity
     {
         health = maxHealth;
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Damage(5);
-        }
-    }
 }
