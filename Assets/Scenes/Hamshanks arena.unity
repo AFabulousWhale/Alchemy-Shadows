@@ -9486,7 +9486,7 @@ MonoBehaviour:
   target: {fileID: 898975000}
   camera: {fileID: 1090659232}
   min_zoom: 5
-  max_zoom: 12
+  max_zoom: 10
 --- !u!114 &1090659230
 MonoBehaviour:
   m_ObjectHideFlags: 0

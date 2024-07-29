@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         return Mathf.Clamp(new_zoom, min_zoom, max_zoom);
     }
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         // follow code.
         Vector3 new_position = new Vector3(target.position.x, target.position.y, -10f);
