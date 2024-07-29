@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class play : MonoBehaviour
+public class Play : MonoBehaviour
 {
     public void startthegameowo()
     {
