@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     bool startedSpawning;
 
-    public int multiplier;
+    public float multiplier;
 
     EnemySpawner()
     {

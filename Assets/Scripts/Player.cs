@@ -61,9 +61,12 @@ public class Player: Entity
 
     public override void Die()
     {
-        GetComponent<PlayerMovement>().enabled = false;
-        Transitions.instance.FadeIn();
-        death.SetActive(true);
+        if (!death.activeSelf)
+        {
+            GetComponent<PlayerMovement>().enabled = false;
+            Transitions.instance.FadeIn();
+            death.SetActive(true);
+        }
     }
 
     public void Attack()

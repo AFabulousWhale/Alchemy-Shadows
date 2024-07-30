@@ -49,12 +49,12 @@ public class KIllTracker : MonoBehaviour
         if (progression == Progression.stage2)
         {
             currntNeededKills = stage2EnemyKills;
-            EnemySpawner.enemySpawnerREF.multiplier = 2;
+            EnemySpawner.enemySpawnerREF.multiplier = 1.5f;
         }
         if (progression == Progression.stage3)
         {
             currntNeededKills = stage3EnemyKills;
-            EnemySpawner.enemySpawnerREF.multiplier = 3;
+            EnemySpawner.enemySpawnerREF.multiplier = 2.5f;
         }
 
         if(stageComplete)

@@ -8,8 +8,8 @@ public class Ranged : Weapon
 
     Animator anim;
 
-    public int bulletSpeed = 3;
-    public int shootTime = 3;
+    public float bulletSpeed = 3;
+    public float shootTime = 3;
     private void Start()
     {
         Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
