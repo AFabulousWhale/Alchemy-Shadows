@@ -34,15 +34,7 @@ public class EnemySpawner : MonoBehaviour
         maxEnemyCount = KIllTracker.killTrackerREF.currntNeededKills;
         if (KIllTracker.killTrackerREF.currentKills == maxEnemyCount)
         {
-            if (KIllTracker.killTrackerREF.progression == KIllTracker.Progression.stage3)
-            {
-                SceneManager.LoadScene(2); //hamshank
-            }
-            else
-            {
-                KIllTracker.killTrackerREF.stageComplete = true;
-                SceneManager.LoadScene(3); //go to abode
-            }
+            StartCoroutine(Transition());
         }
 
 
@@ -50,6 +42,22 @@ public class EnemySpawner : MonoBehaviour
         {
             startedSpawning = true;
             StartCoroutine(CheckEnemySpawns());
+        }
+    }
+
+    IEnumerator Transition()
+    {
+        yield return new WaitForSeconds(2f);
+        Transitions.instance.FadeIn();
+        yield return new WaitForSeconds(Transitions.instance.duration);
+        if (KIllTracker.killTrackerREF.progression == KIllTracker.Progression.stage3)
+        {
+            SceneManager.LoadScene(2); //hamshank
+        }
+        else
+        {
+            KIllTracker.killTrackerREF.stageComplete = true;
+            SceneManager.LoadScene(3); //go to abode
         }
     }
 
