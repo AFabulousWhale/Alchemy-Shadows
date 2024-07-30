@@ -6,6 +6,8 @@ public class Ranged : Weapon
 {
     public GameObject bulletPrefab;
 
+    Animator anim;
+
     public int bulletSpeed = 3;
     public int shootTime = 3;
     private void Start()
@@ -21,6 +23,8 @@ public class Ranged : Weapon
         bulletScript.damageMax = damageMax;
         bulletScript.damageMin = damageMin;
 
+        anim = transform.parent.gameObject.GetComponent<Animator>();
+
         StartCoroutine(Shoot());
     }
 
@@ -28,6 +32,9 @@ public class Ranged : Weapon
     {
         //detect player in range
         //shoot bullet towards player's position
+
+        anim.StopPlayback();
+        anim.Play("Shoot");
 
         var colliders = Physics2D.OverlapCircleAll(transform.position, 15f);
         foreach (var collider in colliders)
@@ -43,7 +50,7 @@ public class Ranged : Weapon
                 break;
             }
         }
-
+        anim.Play("Idle");
         yield return new WaitForSeconds(3);
         StartCoroutine(Shoot());
     }

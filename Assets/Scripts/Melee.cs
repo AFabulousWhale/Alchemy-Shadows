@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Melee : Weapon
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //rabbit bounces towards player
+    //attacks when near
 }

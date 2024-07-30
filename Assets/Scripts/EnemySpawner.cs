@@ -61,7 +61,8 @@ public class EnemySpawner : MonoBehaviour
                 {
                     if (currentEnemyCount < maxEnemyCount)
                     {
-                        SpawnEnemy(p.transform.position);
+                        Vector2 Pos = new Vector2(p.transform.position.x, p.transform.position.y + 1);
+                        SpawnEnemy(Pos);
                         currentEnemyCount++;
                         break;
                     }
@@ -80,12 +81,11 @@ public class EnemySpawner : MonoBehaviour
         //once certain progression go back to abode
     }
 
-    public void SpawnEnemy(Vector3 location)
+    public void SpawnEnemy(Vector2 location)
     {
         int randomEnemy = Random.Range(0, enemyList.enemies.Count);
         EnemySO enemyToSpawn = enemyList.enemies[randomEnemy];
         GameObject enemyObject = Instantiate(enemyToSpawn.enemyPrefab, location, Quaternion.identity);
-
 
         GameObject enemyWeapon = Instantiate(enemyToSpawn.weapon.weaponPrefab, enemyObject.transform.position, Quaternion.identity);
         enemyWeapon.transform.parent = enemyObject.transform;
