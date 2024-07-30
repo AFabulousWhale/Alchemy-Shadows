@@ -9,17 +9,15 @@ public class Entity : MonoBehaviour
 
     public bool isDead;
 
-    public virtual float Damage(float damageAmount)
+    public virtual int Damage(float damageAmount)
     {
         health -= damageAmount;
 
         health = Mathf.Clamp(health, 0, maxHealth);
 
-        Debug.Log(health);
-
         isDead = HealthCheck();
 
-        return health;
+        return (int)health;
     }
 
     public bool HealthCheck()

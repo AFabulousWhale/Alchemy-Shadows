@@ -87,30 +87,30 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemyObject = Instantiate(enemyToSpawn.enemyPrefab, location, Quaternion.identity);
 
 
-        //GameObject enemyWeapon = Instantiate(enemyToSpawn.weapon.weaponPrefab);
-        //enemyWeapon.transform.parent = enemyObject.transform;
-        //Weapon weaponScript = enemyWeapon.GetComponent<Weapon>();
+        GameObject enemyWeapon = Instantiate(enemyToSpawn.weapon.weaponPrefab, enemyObject.transform.position, Quaternion.identity);
+        enemyWeapon.transform.parent = enemyObject.transform;
+        Weapon weaponScript = enemyWeapon.GetComponent<Weapon>();
 
-        //if (enemyToSpawn.weapon.weaponType == WeaponType.ranged) //add ranged script if ranged weapon
-        //{
-        //    if (!weaponScript)
-        //    {
-        //        weaponScript = enemyWeapon.AddComponent<Ranged>();
-        //    }
+        if (enemyToSpawn.weapon.weaponType == WeaponType.ranged) //add ranged script if ranged weapon
+        {
+            if (!weaponScript)
+            {
+                weaponScript = enemyWeapon.AddComponent<Ranged>();
+            }
 
-        //    Ranged rangedScript = weaponScript as Ranged;
-        //    rangedScript.bulletPrefab = enemyToSpawn.weapon.bullet;
-        //}
-        //else if(enemyToSpawn.weapon.weaponType == WeaponType.melee)
-        //{
-        //    if (!weaponScript)
-        //    {
-        //        weaponScript = enemyWeapon.AddComponent<Melee>();
-        //    }
-        //}
+            Ranged rangedScript = weaponScript as Ranged;
+            rangedScript.bulletPrefab = enemyToSpawn.weapon.bullet;
+        }
+        else if (enemyToSpawn.weapon.weaponType == WeaponType.melee)
+        {
+            if (!weaponScript)
+            {
+                weaponScript = enemyWeapon.AddComponent<Melee>();
+            }
+        }
 
-        //weaponScript.damageMin = enemyToSpawn.weapon.damageMin;
-        //weaponScript.damageMax = enemyToSpawn.weapon.damageMax;
+        weaponScript.damageMin = enemyToSpawn.weapon.damageMin;
+        weaponScript.damageMax = enemyToSpawn.weapon.damageMax;
 
 
         Enemy enemyScript = enemyObject.GetComponent<Enemy>();

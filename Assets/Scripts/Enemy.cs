@@ -19,7 +19,7 @@ public class Enemy : Entity
         healthSlider.value = maxHealth;
     }
 
-    public override float Damage(float damageAmount)
+    public override int Damage(float damageAmount)
     {
         healthSlider.value = health;
         return base.Damage(damageAmount);

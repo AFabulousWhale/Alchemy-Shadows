@@ -28,11 +28,12 @@ public class Player: Entity
         health = maxHealth;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        healthUI.text = $"Health: {health}";
     }
 
     private void Update()
     {
-        enemies.text = ($"Enemies Left: {KIllTracker.killTrackerREF.currntNeededKills - KIllTracker.killTrackerREF.currentKills}");
+        //enemies.text = ($"Enemies Left: {KIllTracker.killTrackerREF.currntNeededKills - KIllTracker.killTrackerREF.currentKills}");
         if(Input.GetKey(KeyCode.Mouse0))
         {
             Attack();
@@ -43,11 +44,11 @@ public class Player: Entity
         }
     }
 
-    public override float Damage(float damageAmount)
+    public override int Damage(float damageAmount)
     {
         healthUI.text = ($"Health: {base.Damage(damageAmount)}");
 
-        return health;
+        return (int)health;
     }
 
     public override void Die()
