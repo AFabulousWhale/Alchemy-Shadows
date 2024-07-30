@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask   ground_layer;
 
     Animator animator;
+    SpriteRenderer sprite;
+    BoxCollider2D collider;
 
     private bool IsGrounded()
     {
@@ -24,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        collider = GetComponent<BoxCollider2D>();
     }
 
     private void FixedUpdate()
@@ -37,6 +41,18 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
         animator.SetFloat("X", horizontal);
+
+        if(horizontal == -1)
+        {
+            sprite.flipX = true;
+            collider.offset = new Vector2(0.43f, -0.02074242f);
+        }
+
+        if (horizontal == 1)
+        {
+            sprite.flipX = false;
+            collider.offset = new Vector2(-0.4126931f, -0.02074242f);
+        }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

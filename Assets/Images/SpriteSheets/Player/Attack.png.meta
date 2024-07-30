@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f93c3dd34db63214197c99f640b37fec
+guid: 2e001e24672cb1f4fb3c91ee0e0ea708
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,148 +97,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ezgif-1-244b26aee9_0
+      name: Attack_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 542
-        width: 274
-        height: 422
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd234d7e0a4ebe149a4fa590d169c7de
-      internalID: -549983391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ezgif-1-244b26aee9_1
-      rect:
-        serializedVersion: 2
-        x: 587
-        y: 543
+        x: 171
+        y: 27
         width: 270
-        height: 422
+        height: 421
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7df0b19e4242734a89cda6b8667e83b
-      internalID: -1581949243
+      spriteID: 6ba8e133117eb1b46b8afab05ae81155
+      internalID: 1522854004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif-1-244b26aee9_2
+      name: Attack_1
       rect:
         serializedVersion: 2
-        x: 1095
-        y: 539
-        width: 274
-        height: 422
+        x: 662
+        y: 22
+        width: 295
+        height: 419
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a70c674633a077142a6a8f4c9de921b9
-      internalID: 84603962
+      spriteID: 775ffa60131931e45b7d2a9cdb1179fd
+      internalID: 1143997990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif-1-244b26aee9_3
+      name: Attack_2
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 19
+        width: 254
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72396dd4e7e4d244e995002a1d9a7d1c
+      internalID: -941305470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3
       rect:
         serializedVersion: 2
         x: 1611
-        y: 543
-        width: 270
-        height: 422
+        y: 22
+        width: 438
+        height: 426
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6af838a3adf5a9469c2e2807343d0be
-      internalID: -1106262539
+      spriteID: 432226331840c3244bf59a18ad756bc2
+      internalID: -1715114613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif-1-244b26aee9_4
+      name: Attack_4
       rect:
         serializedVersion: 2
-        x: 2119
-        y: 539
-        width: 273
-        height: 422
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48dc53d67f618c040b72f26a4078f183
-      internalID: 979827951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ezgif-1-244b26aee9_5
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 31
-        width: 270
-        height: 422
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd1886d137eaf7b478ac8baa837376b4
-      internalID: -870920519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ezgif-1-244b26aee9_6
-      rect:
-        serializedVersion: 2
-        x: 582
-        y: 28
-        width: 275
+        x: 2155
+        y: 27
+        width: 334
         height: 421
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d62124f8d90e0d498ae762d024c9a81
-      internalID: -1126039294
+      spriteID: 655d400194a0b3c49adc3285c0ad5974
+      internalID: -357611754
       vertices: []
       indices: 
       edges: []
@@ -254,13 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ezgif-1-244b26aee9_0: -549983391
-      ezgif-1-244b26aee9_1: -1581949243
-      ezgif-1-244b26aee9_2: 84603962
-      ezgif-1-244b26aee9_3: -1106262539
-      ezgif-1-244b26aee9_4: 979827951
-      ezgif-1-244b26aee9_5: -870920519
-      ezgif-1-244b26aee9_6: -1126039294
+      Attack_0: 1522854004
+      Attack_1: 1143997990
+      Attack_2: -941305470
+      Attack_3: -1715114613
+      Attack_4: -357611754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

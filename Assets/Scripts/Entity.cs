@@ -7,6 +7,8 @@ public class Entity : MonoBehaviour
     public float health;
     public float maxHealth;
 
+    public bool isDead;
+
     public virtual float Damage(float damageAmount)
     {
         health -= damageAmount;
@@ -14,6 +16,8 @@ public class Entity : MonoBehaviour
         health = Mathf.Clamp(health, 0, maxHealth);
 
         Debug.Log(health);
+
+        isDead = HealthCheck();
 
         return health;
     }

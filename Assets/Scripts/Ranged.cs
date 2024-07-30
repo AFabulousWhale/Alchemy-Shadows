@@ -22,14 +22,14 @@ public class Ranged : Weapon
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position,
-                                          transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector3
-                                                (0, 700, 0));
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    GameObject bullet = Instantiate(bulletPrefab, transform.position,
+        //                                  transform.rotation);
+        //    bullet.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector3
+        //                                        (0, 700, 0));
 
-            Destroy(bullet, 5);
-        }
+        //    Destroy(bullet, 5);
+        //}
     }
 }

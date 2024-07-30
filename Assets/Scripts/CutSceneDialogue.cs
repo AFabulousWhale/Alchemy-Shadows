@@ -6,8 +6,14 @@ public class CutSceneDialogue : MonoBehaviour
 {
     DialogueSystem dialogueREF;
 
-    [SerializeField]
-    Animator anim;
+    public Animator anim;
+
+    public static CutSceneDialogue insatance;
+
+    CutSceneDialogue()
+    {
+        insatance = this;
+    }
 
     void Start()
     {
@@ -73,6 +79,7 @@ public class CutSceneDialogue : MonoBehaviour
         {
             if (dialogueREF.endOfText && Input.GetKeyDown(KeyCode.Space))
             {
+                Debug.Log("Dialogue 3");
                 anim.SetInteger("Dialogue", 3);
                 dialogueREF.fullCanvas.SetActive(false);
             }
@@ -83,7 +90,7 @@ public class CutSceneDialogue : MonoBehaviour
     {
         if (anim.GetInteger("progression") == 0) //if first cutscene
         {
-            if (dialogueREF.endOfText && Input.GetKeyDown(KeyCode.Space))
+            if (dialogueREF.endOfText && Input.GetKeyDown(KeyCode.Space)) //if choice
             {
                 anim.SetInteger("Dialogue", 2);
                 dialogueREF.fullCanvas.SetActive(false);
