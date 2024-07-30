@@ -102,6 +102,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   damageMin: 3
   damageMax: 5
+  isRanged: 1
 --- !u!58 &4072404752351162671
 CircleCollider2D:
   m_ObjectHideFlags: 0

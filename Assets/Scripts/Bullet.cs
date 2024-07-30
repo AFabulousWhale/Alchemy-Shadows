@@ -8,9 +8,12 @@ public class Bullet : IDamage
     public float damageMin;
     public float damageMax;
 
+    [SerializeField]
+    bool isRanged;
+
     private void Update()
     {
-        Rotate(360);
+        Rotate(120);
     }
 
     public void Rotate(float rotationAmount)
@@ -27,12 +30,14 @@ public class Bullet : IDamage
         {
             float damage = Random.Range(damageMin, damageMax);
             Damage(damage, parent, collision.gameObject);
-            Destroy(gameObject);
+            if (isRanged)
+            {
+                Destroy(gameObject);
+            }
         }
 
-        if (collision.tag != "Enemy" && collision.tag != "Bullet")
+        if (collision.tag != "Enemy" && collision.tag != "Bullet" && isRanged)
         {
-            Debug.Log(collision.tag);
             Destroy(gameObject);
         }
     }
