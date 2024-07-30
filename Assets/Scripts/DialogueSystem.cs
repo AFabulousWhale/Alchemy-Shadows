@@ -21,13 +21,26 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField]
     public GameObject characterStats;
 
-    [SerializeField]
-    int currentStageOfDialogue;
+    public int currentStageOfDialogue;
 
     int buttonChoice;
 
-    private void Start()
+    public static DialogueSystem dialogueREF;
+
+    public bool pickedBranch;
+    public bool endOfText;
+
+    public GameObject fullCanvas;
+    DialogueSystem()
     {
+        dialogueREF = this;
+    }
+
+    public void StartDialogue()
+    {
+        fullCanvas.SetActive(true);
+        pickedBranch = false;
+        endOfText = false;
         dialogue.gameObject.SetActive(true);
 
         foreach (var button in buttons) 
@@ -42,29 +55,46 @@ public class DialogueSystem : MonoBehaviour
 
     private void Update()
     {
-        if (currentStageOfDialogue < currentDialogue.text.Count - 1) //if not reached the end of the dialogue
+        if (fullCanvas.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Space)) //skips to the next line of dialogue
+            if (currentStageOfDialogue < currentDialogue.text.Count - 1) //if not reached the end of the dialogue
             {
-                //Normal Speech
-                int nextDialogue = currentStageOfDialogue + 1;
-                if (!currentDialogue.text[nextDialogue].isBranch) //if not a branch then go to the next piece of dialogue
+                if (Input.GetKeyDown(KeyCode.Space)) //skips to the next line of dialogue
                 {
-                    ProgressDialogue();
+                    StopAllCoroutines();
+                    audioSource.Stop();
+                    //Normal Speech
+                    int nextDialogue = currentStageOfDialogue + 1;
+                    if (!currentDialogue.text[nextDialogue].isBranch) //if not a branch then go to the next piece of dialogue
+                    {
+                        ProgressDialogue();
+                    }
+                    else
+                    {
+                        Choices();
+                    }
                 }
-                else
-                {
-                    Choices();
-                }
-            }
 
-            if(Input.GetKeyDown(KeyCode.LeftControl))
-            {
-                if (!currentDialogue.text[currentStageOfDialogue].isBranch) //if not a branch then go to the next piece of dialogue
+                if (Input.GetKeyDown(KeyCode.LeftControl))
                 {
-                    EndOfLine();
+                    if (!currentDialogue.text[currentStageOfDialogue].isBranch)
+                    {
+                        EndOfLine();
+                    }
                 }
             }
+            else //end of dialogue
+            {
+                if (!currentDialogue.text[currentStageOfDialogue].isBranch) //if not a branch then end of line completely
+                {
+                    endOfText = true;
+                }
+            }
+        }
+        else
+        {
+            StopAllCoroutines();
+            audioSource.Stop();
         }
     }
 
@@ -86,9 +116,10 @@ public class DialogueSystem : MonoBehaviour
         characterStats.SetActive(false);
     }
 
-    void ProgressDialogue()
+    public void ProgressDialogue()
     {
         StopAllCoroutines();
+        audioSource.Stop();
 
         currentStageOfDialogue++;
         dialogueDisplay = currentDialogue.text[currentStageOfDialogue].speech;
@@ -108,6 +139,7 @@ public class DialogueSystem : MonoBehaviour
     /// <param name="buttonVal"></param>
     public void ChoiceValue(int buttonVal)
     {
+        pickedBranch = true;
         buttonChoice = buttonVal;
 
         ChangeDialogue();
@@ -129,7 +161,7 @@ public class DialogueSystem : MonoBehaviour
         characterStats.SetActive(true);
     }
 
-    IEnumerator TypeWriter()
+    public IEnumerator TypeWriter()
     {
         float speed = currentDialogue.text[currentStageOfDialogue].speaker.talkSpeed;
 

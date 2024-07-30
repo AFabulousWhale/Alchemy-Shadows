@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed       = 8f;
-    private float jump_force  = 10f;
+    [SerializeField] float speed       = 8f;
+    [SerializeField] float jump_force  = 10f;
     private bool  is_grounded = true;
 
     [SerializeField] private Rigidbody2D rb;

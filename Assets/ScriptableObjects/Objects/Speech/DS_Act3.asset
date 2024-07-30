@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5794c80081f08b140acebd115014805e, type: 3}
+  m_Name: DS_Act3
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 11400000, guid: 2f77756c54808844597e7328bc8df5c5, type: 2}
+  - {fileID: 11400000, guid: 88e3d7ae0a6525041b9a432348255bd7, type: 2}
+  - {fileID: 11400000, guid: 7841beaac5ad6514ab9a6838615c54f9, type: 2}
+  - {fileID: 11400000, guid: 6fe875d4591c6f34888a1f529d66f8df, type: 2}
+  - {fileID: 11400000, guid: 427056b8d3e2cdb408f07699c8d2cdcf, type: 2}
+  - {fileID: 11400000, guid: 4fa5d75fa04232e43b089597cfc13cc8, type: 2}
+  - {fileID: 11400000, guid: ed1ff12a36ae7914d8d64043b205d8a4, type: 2}
+  - {fileID: 11400000, guid: 9d99de7d18cae114dadbdc5ac0171c82, type: 2}
