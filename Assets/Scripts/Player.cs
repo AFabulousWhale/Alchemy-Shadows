@@ -22,6 +22,9 @@ public class Player: Entity
     [SerializeField]
     TextMeshProUGUI enemies;
 
+    [SerializeField]
+    GameObject death;
+
     void Start()
     {
         maxHealth = 100;
@@ -58,7 +61,9 @@ public class Player: Entity
 
     public override void Die()
     {
-        //player death stuff
+        GetComponent<PlayerMovement>().enabled = false;
+        Transitions.instance.FadeIn();
+        death.SetActive(true);
     }
 
     public void Attack()
