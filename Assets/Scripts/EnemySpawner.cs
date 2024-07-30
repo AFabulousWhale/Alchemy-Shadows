@@ -32,14 +32,21 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         maxEnemyCount = KIllTracker.killTrackerREF.currntNeededKills;
-        if (KIllTracker.killTrackerREF.currentKills == KIllTracker.killTrackerREF.currntNeededKills)
+        if (KIllTracker.killTrackerREF.currentKills == maxEnemyCount)
         {
-            KIllTracker.killTrackerREF.stageComplete = true;
-            SceneManager.LoadScene(3);
+            if (KIllTracker.killTrackerREF.progression == KIllTracker.Progression.stage3)
+            {
+                SceneManager.LoadScene(2); //hamshank
+            }
+            else
+            {
+                KIllTracker.killTrackerREF.stageComplete = true;
+                SceneManager.LoadScene(3); //go to abode
+            }
         }
 
 
-        if (currentEnemyCount < maxEnemyCount && !startedSpawning && !KIllTracker.killTrackerREF.stageComplete)
+        if (currentEnemyCount < maxEnemyCount && !startedSpawning && !KIllTracker.killTrackerREF.stageComplete) //only spawn enemies if stage not done
         {
             startedSpawning = true;
             StartCoroutine(CheckEnemySpawns());

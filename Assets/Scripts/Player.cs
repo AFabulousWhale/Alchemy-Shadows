@@ -33,8 +33,13 @@ public class Player: Entity
 
     private void Update()
     {
-        //enemies.text = ($"Enemies Left: {KIllTracker.killTrackerREF.currntNeededKills - KIllTracker.killTrackerREF.currentKills}");
-        if(Input.GetKey(KeyCode.Mouse0))
+        if (KIllTracker.killTrackerREF.progression != KIllTracker.Progression.stage3)
+        {
+            enemies.text = ($"Enemies Left: {KIllTracker.killTrackerREF.currntNeededKills - KIllTracker.killTrackerREF.currentKills}");
+        }
+
+
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             Attack();
         }

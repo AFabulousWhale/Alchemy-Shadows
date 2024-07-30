@@ -17,14 +17,7 @@ public class SceneTransitions : MonoBehaviour
         {
             KIllTracker.killTrackerREF.progression++;
             KIllTracker.killTrackerREF.currentKills = 0;
-            if (KIllTracker.killTrackerREF.progression == KIllTracker.Progression.stage3)
-            {
-                SceneManager.LoadScene(2); //hamshank
-            }
-            else
-            {
-                SceneManager.LoadScene(1);
-            }
+            SceneManager.LoadScene(1);
         }
     }
 
