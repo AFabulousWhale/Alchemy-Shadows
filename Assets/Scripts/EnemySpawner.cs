@@ -18,6 +18,8 @@ public class EnemySpawner : MonoBehaviour
 
     bool startedSpawning;
 
+    public int multiplier;
+
     EnemySpawner()
     {
         enemySpawnerREF = this;
@@ -102,14 +104,20 @@ public class EnemySpawner : MonoBehaviour
         EnemySO enemyToSpawn = enemyList.enemies[randomEnemy];
         GameObject enemyObject = Instantiate(enemyToSpawn.enemyPrefab, location, Quaternion.identity);
 
-
         Enemy enemyScript = enemyObject.GetComponent<Enemy>();
 
-        if(!enemyScript) //if the enemy doesn't have the script then add it
+        if (!enemyScript) //if the enemy doesn't have the script then add it
         {
             enemyScript = enemyObject.AddComponent<Enemy>();
         }
 
         enemyScript.maxHealth = enemyToSpawn.maxHealth;
+
+        if (enemyList.enemies[randomEnemy].weapon.weaponType == WeaponType.ranged)
+        {
+            Ranged script = enemyScript.weapon.GetComponent<Ranged>();
+            script.bulletSpeed = script.bulletSpeed * multiplier;
+            script.shootTime = script.shootTime / multiplier;
+        }
     }
 }

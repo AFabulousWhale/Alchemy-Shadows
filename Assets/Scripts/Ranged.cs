@@ -45,13 +45,13 @@ public class Ranged : Weapon
 
                 GameObject bullet = Instantiate(bulletPrefab, transform.position,
                                               transform.rotation);
-                bullet.LeanMove(lastPos, 3f);
-                Destroy(bullet, 3);
+                bullet.LeanMove(lastPos, shootTime);
+                Destroy(bullet, bulletSpeed);
                 break;
             }
         }
         anim.Play("Idle");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(shootTime);
         StartCoroutine(Shoot());
     }
 }

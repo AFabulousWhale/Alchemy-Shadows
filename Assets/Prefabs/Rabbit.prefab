@@ -210,6 +210,7 @@ MonoBehaviour:
   isDead: 0
   poof: {fileID: 1641453384610983521, guid: 77ceb22721173a7438216c14dd76ed19, type: 3}
   healthSlider: {fileID: 8051209812061348422}
+  weapon: {fileID: 1558121621548102117}
 --- !u!50 &1543559940665457055
 Rigidbody2D:
   serializedVersion: 4
@@ -449,6 +450,7 @@ MonoBehaviour:
   parent: {fileID: 1517723933892492464}
   damageMin: 0
   damageMax: 0
+  isRanged: 0
 --- !u!61 &5772803573699290375
 BoxCollider2D:
   m_ObjectHideFlags: 0

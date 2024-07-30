@@ -11,6 +11,7 @@ public class Enemy : Entity
     [SerializeField]
     Slider healthSlider;
 
+    public GameObject weapon;
 
     void Start()
     {

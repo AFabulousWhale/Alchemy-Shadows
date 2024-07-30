@@ -26819,6 +26819,7 @@ MonoBehaviour:
   - {fileID: 47357185}
   currentEnemyCount: 0
   maxEnemyCount: 5
+  multiplier: 3
 --- !u!4 &1794504136
 Transform:
   m_ObjectHideFlags: 0
