@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -13,9 +14,36 @@ public class EnemySpawner : MonoBehaviour
     public int currentEnemyCount;
     public int maxEnemyCount;
 
+    public static EnemySpawner enemySpawnerREF;
+
+    bool startedSpawning;
+
+    EnemySpawner()
+    {
+        enemySpawnerREF = this;
+    }
+
     void Start()
     {
+        startedSpawning = true;
         StartCoroutine(CheckEnemySpawns());
+    }
+
+    private void Update()
+    {
+        maxEnemyCount = KIllTracker.killTrackerREF.currntNeededKills;
+        if (KIllTracker.killTrackerREF.currentKills == KIllTracker.killTrackerREF.currntNeededKills)
+        {
+            KIllTracker.killTrackerREF.stageComplete = true;
+            SceneManager.LoadScene(3);
+        }
+
+
+        if (currentEnemyCount < maxEnemyCount && !startedSpawning && !KIllTracker.killTrackerREF.stageComplete)
+        {
+            startedSpawning = true;
+            StartCoroutine(CheckEnemySpawns());
+        }
     }
 
     IEnumerator CheckEnemySpawns()
@@ -25,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
             var colliders = Physics2D.OverlapCircleAll(p.transform.position, 10f);
             foreach (var collider in colliders)
             {
-                if (collider.tag == "Player")
+                if (collider.tag == "Player" || collider.tag == "Enemy")
                 {
                     break;
                 }
@@ -41,6 +69,7 @@ public class EnemySpawner : MonoBehaviour
             }
             yield return new WaitForSeconds(2f);
         }
+        startedSpawning = false;
         //get a list of all possible enemy spawns
         //make sure player isn't too close in a radius
         //if not spawn enemy, otherwise check again
@@ -58,30 +87,30 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemyObject = Instantiate(enemyToSpawn.enemyPrefab, location, Quaternion.identity);
 
 
-        GameObject enemyWeapon = Instantiate(enemyToSpawn.weapon.weaponPrefab);
-        enemyWeapon.transform.parent = enemyObject.transform;
-        Weapon weaponScript = enemyWeapon.GetComponent<Weapon>();
+        //GameObject enemyWeapon = Instantiate(enemyToSpawn.weapon.weaponPrefab);
+        //enemyWeapon.transform.parent = enemyObject.transform;
+        //Weapon weaponScript = enemyWeapon.GetComponent<Weapon>();
 
-        if (enemyToSpawn.weapon.weaponType == WeaponType.ranged) //add ranged script if ranged weapon
-        {
-            if (!weaponScript)
-            {
-                weaponScript = enemyWeapon.AddComponent<Ranged>();
-            }
+        //if (enemyToSpawn.weapon.weaponType == WeaponType.ranged) //add ranged script if ranged weapon
+        //{
+        //    if (!weaponScript)
+        //    {
+        //        weaponScript = enemyWeapon.AddComponent<Ranged>();
+        //    }
 
-            Ranged rangedScript = weaponScript as Ranged;
-            rangedScript.bulletPrefab = enemyToSpawn.weapon.bullet;
-        }
-        else if(enemyToSpawn.weapon.weaponType == WeaponType.melee)
-        {
-            if (!weaponScript)
-            {
-                weaponScript = enemyWeapon.AddComponent<Melee>();
-            }
-        }
+        //    Ranged rangedScript = weaponScript as Ranged;
+        //    rangedScript.bulletPrefab = enemyToSpawn.weapon.bullet;
+        //}
+        //else if(enemyToSpawn.weapon.weaponType == WeaponType.melee)
+        //{
+        //    if (!weaponScript)
+        //    {
+        //        weaponScript = enemyWeapon.AddComponent<Melee>();
+        //    }
+        //}
 
-        weaponScript.damageMin = enemyToSpawn.weapon.damageMin;
-        weaponScript.damageMax = enemyToSpawn.weapon.damageMax;
+        //weaponScript.damageMin = enemyToSpawn.weapon.damageMin;
+        //weaponScript.damageMax = enemyToSpawn.weapon.damageMax;
 
 
         Enemy enemyScript = enemyObject.GetComponent<Enemy>();

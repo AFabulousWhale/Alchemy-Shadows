@@ -65,13 +65,16 @@ public class DialogueSystem : MonoBehaviour
                     audioSource.Stop();
                     //Normal Speech
                     int nextDialogue = currentStageOfDialogue + 1;
-                    if (!currentDialogue.text[nextDialogue].isBranch) //if not a branch then go to the next piece of dialogue
+                    if (currentDialogue.text[nextDialogue])
                     {
-                        ProgressDialogue();
-                    }
-                    else
-                    {
-                        Choices();
+                        if (!currentDialogue.text[nextDialogue].isBranch) //if not a branch then go to the next piece of dialogue
+                        {
+                            ProgressDialogue();
+                        }
+                        else
+                        {
+                            Choices();
+                        }
                     }
                 }
 
