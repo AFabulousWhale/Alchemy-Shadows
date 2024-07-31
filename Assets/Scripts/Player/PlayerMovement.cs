@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform   ground_check;
     [SerializeField] private LayerMask   ground_layer;
+    
 
     Animator animator;
     SpriteRenderer sprite;
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
